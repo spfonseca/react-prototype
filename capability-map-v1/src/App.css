@@ -1,0 +1,57 @@
+.App {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .capability-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  .back-button {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    background-color: #eee;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .path-label {
+    margin: 10px 0 20px;
+    font-weight: bold;
+  }
+  
+  .capability-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .capability-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 16px;
+    width: 250px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .capability-card:hover {
+    background-color: #f0f8ff;
+  }
+  
+  .capability-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .hint-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+  }
+  

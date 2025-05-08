@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.capability-node {
+  margin: 10px;
+  text-align: center;
+}
+
+.capability-box {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.capability-box:hover {
+  background-color: #0056b3;
+}
+
+.children {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.capability-node-nested {
+  display: inline-block;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  border-radius: 15px;
+  margin: 10px;
+  position: relative;
+}
+
+.nested-children {
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.capability-box {
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  margin: 10px;
+}
+
+.capability-box:hover {
+  background-color: #0056b3;
+}
+
+.capability-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nested-children-inside {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.breadcrumbs {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+}
+.breadcrumbs span {
+  cursor: pointer;
+  color: #007BFF;
+}
+.breadcrumbs span:hover {
+  text-decoration: underline;
+}
+
+.capability-box.level-even {
+  background-color: #007BFF;
+}
+.capability-box.level-odd {
+  background-color: #6C757D;
+}
+
+.capability-box.level-even {
+  background-color: #e0f0ff;
+  color: #003366;
+}
+
+.capability-box.level-odd {
+  background-color: #f5f5f5;
+  color: #333333;
+}
