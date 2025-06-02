@@ -1,0 +1,23 @@
+.resizable-pane {
+  background: #fff4e6;
+  border-left: 3px solid #ffa726;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 50px;
+}
+
+.resizable-pane-handle {
+  width: 2px;
+  cursor: col-resize;
+  background: #ffa726;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.resizable-pane-content {
+  padding: 1rem;
+}

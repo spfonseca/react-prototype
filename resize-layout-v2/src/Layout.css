@@ -1,0 +1,43 @@
+.layout-root {
+  display: flex;
+  height: 100vh;
+  background: #ddd;
+}
+
+.layout-nav {
+  width: 200px;
+  background: #cce5ff;
+  padding: 1rem;
+}
+
+.layout-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.layout-header {
+  padding: 0.5rem;
+  background: #b3b3b3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout-content-row {
+  flex: 1;
+  display: flex;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 1rem;
+  background: #e6ffe6;
+}
