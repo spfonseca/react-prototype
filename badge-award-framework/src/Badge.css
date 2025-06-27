@@ -1,0 +1,33 @@
+.badge-container {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.badge-content {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  word-break: break-word;
+  line-height: 1.1;
+}
+
+.badge-icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.badge-text {
+  font-size: 0.6rem;
+  padding: 0 0.25rem;
+  text-wrap: wrap;
+}

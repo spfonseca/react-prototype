@@ -1,0 +1,19 @@
+.app-container {
+  padding: 1rem;
+  font-family: sans-serif;
+  background-color: #f7f7f7; /* very light grey */
+  min-height: 100vh;
+}
+
+.category-section {
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+

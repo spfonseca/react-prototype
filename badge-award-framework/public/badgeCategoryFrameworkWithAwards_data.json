@@ -1,0 +1,216 @@
+{
+  "categories": [
+    {
+      "name": "Engineering",
+      "actions": [
+        "Shipping clean code",
+        "Taming tech debt",
+        "Optimizing performance",
+        "Squashing bugs",
+        "Owning the backend",
+        "Conquering the frontend",
+        "Automating the boring stuff",
+        "Refactoring with flair",
+        "Making the impossible work",
+        "Saving the sprint"
+      ]
+    },
+    {
+      "name": "Innovation",
+      "actions": [
+        "Inventing new features",
+        "Prototyping wild ideas",
+        "Experimenting fearlessly",
+        "Thinking outside the repo",
+        "Breaking boundaries",
+        "Turning ideas into impact",
+        "Rethinking the norm",
+        "Solving the unsolvable",
+        "Reimagining UX",
+        "Disrupting the roadmap"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "actions": [
+        "Mentoring with heart",
+        "Leading from the trenches",
+        "Inspiring the team",
+        "Making hard calls",
+        "Unblocking blockers",
+        "Seeing the big picture",
+        "Listening with intention",
+        "Owning delivery",
+        "Rallying the crew",
+        "Navigating chaos"
+      ]
+    },
+    {
+      "name": "Craftsmanship",
+      "actions": [
+        "Writing beautiful code",
+        "Naming things well",
+        "Writing legendary docs",
+        "Leaving things better",
+        "Building with precision",
+        "Loving the details",
+        "Designing elegant APIs",
+        "Architecting for the future",
+        "Testing like a pro",
+        "Committing with care"
+      ]
+    },
+    {
+      "name": "Collaboration",
+      "actions": [
+        "Pairing like a champ",
+        "Reviewing with kindness",
+        "Communicating clearly",
+        "Sharing the spotlight",
+        "Bridging teams",
+        "Supporting teammates",
+        "Leading a sync",
+        "Coordinating handoffs",
+        "Aligning stakeholders",
+        "Creating psychological safety"
+      ]
+    },
+    {
+      "name": "Design & UX",
+      "actions": [
+        "Championing accessibility",
+        "Designing delightfully",
+        "Thinking like a user",
+        "Prototyping with polish",
+        "Simplifying interactions",
+        "Making it intuitive",
+        "Styling with flair",
+        "Refining the experience",
+        "Designing for joy",
+        "Spotting the rough edges"
+      ]
+    },
+    {
+      "name": "Testing & Quality",
+      "actions": [
+        "Catching tricky bugs",
+        "Testing the edge cases",
+        "Automating with care",
+        "Preventing regressions",
+        "Advocating for quality",
+        "Improving coverage",
+        "Breaking things on purpose",
+        "Writing stable tests",
+        "Stress testing limits",
+        "Hardening the system"
+      ]
+    },
+    {
+      "name": "Data & Insights",
+      "actions": [
+        "Surfacing key metrics",
+        "Asking sharp questions",
+        "Visualizing the story",
+        "Connecting the dots",
+        "Spotting trends early",
+        "Instrumenting thoughtfully",
+        "Building dashboards",
+        "Debugging data",
+        "Optimizing pipelines",
+        "Driving decisions"
+      ]
+    },
+    {
+      "name": "Customer Impact",
+      "actions": [
+        "Fixing what matters",
+        "Listening to feedback",
+        "Prioritizing real needs",
+        "Delivering value",
+        "Closing the loop",
+        "Making it faster",
+        "Simplifying the flow",
+        "Owning user success",
+        "Improving usability",
+        "Thinking like a customer"
+      ]
+    },
+    {
+      "name": "Foundations",
+      "actions": [
+        "Keeping the lights on",
+        "Upgrading the engine",
+        "Nailing the deployment",
+        "Guarding the gates",
+        "Taming the logs",
+        "Cleaning the cobwebs",
+        "Patching the cracks",
+        "Bulletproofing the backend",
+        "Building the launchpad",
+        "Stabilizing the ship"
+      ]
+    },
+    {
+      "name": "Business Impact",
+      "actions": [
+        "Closing the loop",
+        "Owning the metrics",
+        "Supporting the pitch",
+        "Making it sellable",
+        "Unblocking the business",
+        "Finding the ROI",
+        "Connecting the dots",
+        "Simplifying the model",
+        "Delivering delight",
+        "Driving the vision"
+      ]
+    }
+  ],
+  "awardLevels": [
+    {
+      "level": "bronze",
+      "meaning": "Recognizes foundational contributions and consistent participation.",
+      "criteria": [
+        "Completing core tasks",
+        "Showing consistent effort",
+        "Demonstrating reliability"
+      ]
+    },
+    {
+      "level": "silver",
+      "meaning": "Highlights noteworthy impact and above-average contributions.",
+      "criteria": [
+        "Exceeding expectations",
+        "Solving meaningful problems",
+        "Taking initiative on challenges"
+      ]
+    },
+    {
+      "level": "gold",
+      "meaning": "Honors high-performance contributions and leadership moments.",
+      "criteria": [
+        "Leading successful initiatives",
+        "Driving measurable outcomes",
+        "Exemplifying strong ownership"
+      ]
+    },
+    {
+      "level": "platinum",
+      "meaning": "Represents exceptional ownership and cross-team influence.",
+      "criteria": [
+        "Influencing cross-functional teams",
+        "Elevating project standards",
+        "Coaching and empowering others"
+      ]
+    },
+    {
+      "level": "diamond",
+      "meaning": "The highest honor for transformative and lasting contributions.",
+      "criteria": [
+        "Redefining excellence",
+        "Creating long-term impact",
+        "Setting visionary direction"
+      ]
+    }
+  ]
+}
