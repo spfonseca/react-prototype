@@ -4,12 +4,13 @@ import "./Badge.css";
 import React from "react";
 
 const awardLevelStyles = {
-  bronze: "#cd7f32",
-  silver: "#9ca3af",
-  gold: "#ffd700",
-  platinum: "#8b5cf6",
-  diamond: "#b9f2ff"
+  bronze: "#d6b37e",    // Modern bronze
+  silver: "#c2c6cc",    // Soft silver
+  gold: "#f2c94c",      // Muted gold
+  platinum: "#bbb9f5",  // Soft platinum
+  diamond: "#d0f0f8"    // Icy diamond
 };
+
 
 const Badge = ({ action, category, awardLevel = "bronze", onClick, scale = 1, categoryIcons }) => {
   const color = awardLevelStyles[awardLevel] || "#ccc";
