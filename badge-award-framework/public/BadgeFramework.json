@@ -2,6 +2,8 @@
   "categories": [
     {
       "name": "Engineering",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaCode",
       "actions": [
         "Shipping clean code",
         "Taming tech debt",
@@ -17,6 +19,8 @@
     },
     {
       "name": "Innovation",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaLightbulb",
       "actions": [
         "Inventing new features",
         "Prototyping wild ideas",
@@ -32,6 +36,8 @@
     },
     {
       "name": "Leadership",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaUsers",
       "actions": [
         "Mentoring with heart",
         "Leading from the trenches",
@@ -47,6 +53,8 @@
     },
     {
       "name": "Craftsmanship",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaTools",
       "actions": [
         "Writing beautiful code",
         "Naming things well",
@@ -62,6 +70,8 @@
     },
     {
       "name": "Collaboration",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaHandshake",
       "actions": [
         "Pairing like a champ",
         "Reviewing with kindness",
@@ -77,6 +87,8 @@
     },
     {
       "name": "Design & UX",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaPencilRuler",
       "actions": [
         "Championing accessibility",
         "Designing delightfully",
@@ -92,6 +104,8 @@
     },
     {
       "name": "Testing & Quality",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaBug",
       "actions": [
         "Catching tricky bugs",
         "Testing the edge cases",
@@ -107,6 +121,8 @@
     },
     {
       "name": "Data & Insights",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaChartLine",
       "actions": [
         "Surfacing key metrics",
         "Asking sharp questions",
@@ -122,6 +138,8 @@
     },
     {
       "name": "Customer Impact",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaUserCheck",
       "actions": [
         "Fixing what matters",
         "Listening to feedback",
@@ -137,6 +155,8 @@
     },
     {
       "name": "Foundations",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaCogs",
       "actions": [
         "Keeping the lights on",
         "Upgrading the engine",
@@ -152,6 +172,8 @@
     },
     {
       "name": "Business Impact",
+      "iconLibrary": "react-icons/fa",
+      "iconComponentName": "FaBriefcase",
       "actions": [
         "Closing the loop",
         "Owning the metrics",
@@ -174,7 +196,8 @@
         "Completing core tasks",
         "Showing consistent effort",
         "Demonstrating reliability"
-      ]
+      ],
+      "color": "#d6b37e"
     },
     {
       "level": "silver",
@@ -183,7 +206,8 @@
         "Exceeding expectations",
         "Solving meaningful problems",
         "Taking initiative on challenges"
-      ]
+      ],
+      "color": "#c2c6cc"
     },
     {
       "level": "gold",
@@ -192,7 +216,8 @@
         "Leading successful initiatives",
         "Driving measurable outcomes",
         "Exemplifying strong ownership"
-      ]
+      ],
+      "color": "#f2c94c"
     },
     {
       "level": "platinum",
@@ -201,7 +226,8 @@
         "Influencing cross-functional teams",
         "Elevating project standards",
         "Coaching and empowering others"
-      ]
+      ],
+      "color": "#bbb9f5"
     },
     {
       "level": "diamond",
@@ -210,7 +236,8 @@
         "Redefining excellence",
         "Creating long-term impact",
         "Setting visionary direction"
-      ]
+      ],
+      "color": "#d0f0f8"
     }
   ]
 }

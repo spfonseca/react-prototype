@@ -1,20 +1,17 @@
 // Badge.js
 import "./Badge.css";
 
+
 import React from "react";
 
-const awardLevelStyles = {
-  bronze: "#d6b37e",    // Modern bronze
-  silver: "#c2c6cc",    // Soft silver
-  gold: "#f2c94c",      // Muted gold
-  platinum: "#bbb9f5",  // Soft platinum
-  diamond: "#d0f0f8"    // Icy diamond
-};
+import DynamicIcon from "./DynamicIcon";
 
 
-const Badge = ({ action, category, awardLevel = "bronze", onClick, scale = 1, categoryIcons }) => {
-  const color = awardLevelStyles[awardLevel] || "#ccc";
-  const icon = categoryIcons[category.toLowerCase()] || categoryIcons["engineering"];
+const Badge = ({ action, categoryName, awardLevel, color, iconLibrary, iconComponentName, onClick, scale = 1}) => {
+
+console.log("Badge iconLibrary:", iconLibrary, "iconComponentName:", iconComponentName);
+
+
   const scaledWidth = 160 * scale;
   const scaledHeight = 176 * scale;
 
@@ -44,7 +41,7 @@ const Badge = ({ action, category, awardLevel = "bronze", onClick, scale = 1, ca
     }}
   >
     <div className="badge-icon" style={{ fontSize: `${1.25 * scale}rem` }}>
-      {icon}
+      <DynamicIcon libKey={iconLibrary} iconName={iconComponentName} style={{ fontSize: `${1.25 * scale}rem` }} />
     </div>
     <div className="badge-text" style={{ fontSize: `${0.6 * scale}rem` }}>
       {action}
