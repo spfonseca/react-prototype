@@ -1,0 +1,106 @@
+{
+  "careerHandbillId": "steven-fonseca-handbill-july2025",
+  "personId": "steven-fonseca",
+  "suffixDesignations": ["PhD", "MBA"],
+  "headshotUrl": "",
+  "phoneNumber": "(916) 225-6302",
+  "emailAddress": "steven.fonseca@gmail.com",
+  "workProfileUrl": "https://www.linkedin.com/in/stevenfonseca",
+  "title": "Senior Technology Executive, Architecture & Engineering",
+  "summary": "Strategic and results-driven leader, known for disciplined execution and for helping organizations adopt emerging technologies for competitive advantage. Combines deep technical expertise with a proven ability to guide organizations through major transformation, with experience across aerospace, e-commerce, fintech, big tech, and automotive.",
+  "specialities": [
+    {
+      "title": "Multi-Cloud Native",
+      "description": "Define and implement cloud strategies that enable business agility and scale through strategic use of managed services across vendors, driving continuous product improvement and innovation while allowing development to focus on solving business challenges."
+    },
+    {
+      "title": "Microservices & APIs",
+      "description": "Lead large-scale API ecosystem initiatives that enable building applications from composable services, improving time to market, reducing development costs, delivering higher-quality products, unlocking new digital channels, and generating new revenue streams."
+    },
+    {
+      "title": "Technology Platforms",
+      "description": "Define and implement platform strategies that drive infrastructure service reuse, reducing software duplication and development costs, ensuring middleware quality, and enabling development productivity and innovation at scale."
+    },
+    {
+      "title": "Data Science & Artificial Intelligence",
+      "description": "Lead utilization of machine learning, intelligent assistance, and asset generation to turn data into actionable insights that improve decision-making, business performance, development productivity, and offer customers AI-powered products."
+    },
+    {
+      "title": "Architecture Practice",
+      "description": "Build and lead architecture practices, enabling products to meet SLAs consistently, accelerate development teams, and ensure efficient software evolution aligned to business strategy."
+    }
+  ],
+  "targetPositions": [
+    "VP of Architecture",
+    "Chief Software Architect / Engineer",
+    "Sr. Director of Software Engineering",
+    "VP of Enterprise Architecture"
+  ],
+  "targetIndustries": [
+    "E-Commerce",
+    "Big Tech & Fintech",
+    "Media & Entertainment",
+    "Data & AI"
+  ],
+  "targetContacts": [
+    "CTOs",
+    "CIOs",
+    "Vice Presidents",
+    "Directors",
+    "Department Heads",
+    "Executive Recruiters",
+    "Consulting Contract Leaders"
+  ],
+  "targetCompanies": [
+    "FAANG",
+    "Intuit",
+    "PayPal",
+    "Stripe",
+    "Plaid",
+    "Robinhood",
+    "Chime",
+    "Walmart",
+    "Shopify",
+    "eBay",
+    "DoorDash",
+    "Disney",
+    "Spotify",
+    "Warner Bros",
+    "Paramount",
+    "NBC",
+    "Databricks",
+    "Snowflake",
+    "Anthropic",
+    "Hugging Face",
+    "Palantir",
+    "NVIDIA",
+    "Perplexity"
+  ],
+  "pastEmployment": [
+    {
+      "company": "Walmart",
+      "organization": "Global Technology Platform",
+      "role": "Sr. Director of Architecture / Engineering"
+    },
+    {
+      "company": "Cox Automotive",
+      "organization": "Inventory Software Solutions",
+      "role": "Sr. Director of Architecture"
+    },
+    {
+      "company": "Intuit",
+      "organization": "Enterprise Business Services",
+      "role": "Principal Cloud and Services Architect"
+    },
+    {
+      "company": "NASA Jet Propulsion Lab",
+      "organization": "Deep Space Network",
+      "role": "Chief Software Architect"
+    },
+    {
+      "company": "NASA Ames Research Center",
+      "organization": "Intelligent Systems Division",
+      "role": "Director of Software Engineering"
+    }
+  ]
+}
