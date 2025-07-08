@@ -1,0 +1,179 @@
+.chat-container {
+  font-family: "Segoe UI", Roboto, Helvetica Neue, sans-serif;
+  max-width: 700px;
+  margin: 24px auto;
+  border-radius: 8px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80vh;
+}
+
+.chat-messages {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-message {
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 75%;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.chat-user-message {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+  color: #1b4332;
+}
+
+.chat-assistant-message {
+  background-color: #e8e9eb;
+  align-self: flex-start;
+  color: #2d2d2d;
+}
+
+.chat-top-inputs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.chat-input-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.chat-bottom-input-wrapper {
+  background-color: #fafafa;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chat-bullseye-button,
+.chat-send-button,
+.chat-extra-button,
+.chat-mic-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.chat-mic-button {
+  color: #000000;
+  margin-right: 8px;
+}
+
+.chat-input-form {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #fafafa;
+  flex-grow: 1;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.chat-extra-button {
+  margin-left: 8px;
+}
+
+.chat-dropdown-panel-up,
+.chat-dropdown-panel-down {
+  width: 180px;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  transition: opacity 0.2s ease-out;
+  opacity: 1;
+}
+
+.chat-dropdown-panel-up {
+  bottom: 100%;
+  right: 0;
+  transform: translateY(-4px);
+}
+
+.chat-dropdown-panel-down {
+  top: 100%;
+  right: 0;
+  transform: translateY(4px);
+}
+
+.chat-dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  transition: background-color 0.2s ease;
+}
+
+.chat-rectangle {
+  height: 38px;
+  flex-grow: 1;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.chat-context-button {
+  height: 20px;
+  margin-right: 4px;
+  padding: 0 7px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 18px;
+  display: inline-block;
+  color: #222;
+  background: #ffd6e0;
+  transition: background 0.2s;
+  margin-bottom: 4px;
+}
+
+/* Optional: Add color variations for context buttons */
+.chat-context-button.color1 { background: #d6f5ff; }
+.chat-context-button.color2 { background: #e0ffd6; }
+.chat-context-button.color3 { background: #fff7d6; }
+.chat-context-button.color4 { background: #e0e0ff; }
+.chat-context-button.color5 { background: #ffe0f7; }
+.chat-context-button.color6 { background: #e0fff7; }
