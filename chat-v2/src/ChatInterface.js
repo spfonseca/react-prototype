@@ -27,7 +27,10 @@ const BullseyeButton = () => {
   );
 };
 
-export default function ChatInterface({ messages = [], onSend }) {
+export default function ChatInterface() {
+  const [messages, setMessages] = React.useState([
+    { role: "assistant", content: "Hello! How can I help you today?" }
+  ]);
   const [topInput1, setTopInput1] = React.useState("");
   const [topInput2, setTopInput2] = React.useState("");
   const [bottomInput, setBottomInput] = React.useState("");
@@ -126,10 +129,19 @@ export default function ChatInterface({ messages = [], onSend }) {
     "None": [],
   };
 
+  const handleSend = (message) => {
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", content: message },
+      // Optionally, add an assistant response here:
+      // { role: "assistant", content: "This is a placeholder response." }
+    ]);
+  };
+
   const handleTopInput1Submit = (e) => {
     e.preventDefault();
     if (topInput1.trim()) {
-      onSend(topInput1);
+      handleSend(topInput1);
       setTopInput1("");
     }
   };
@@ -137,7 +149,7 @@ export default function ChatInterface({ messages = [], onSend }) {
   const handleTopInput2Submit = (e) => {
     e.preventDefault();
     if (topInput2.trim()) {
-      onSend(topInput2);
+      handleSend(topInput2);
       setTopInput2("");
     }
   };
@@ -145,7 +157,7 @@ export default function ChatInterface({ messages = [], onSend }) {
   const handleBottomInputSubmit = (e) => {
     e.preventDefault();
     if (bottomInput.trim()) {
-      onSend(bottomInput);
+      handleSend(bottomInput);
       setBottomInput("");
     }
   };
