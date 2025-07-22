@@ -1,0 +1,47 @@
+.tia-popover {
+  position: absolute;
+  z-index: 1300;
+  width: 400px;
+  background-color: var(--mui-palette-background-paper, #fff);
+  box-shadow: 0px 4px 24px rgba(0,0,0,0.18);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.tia-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+  cursor: move;
+}
+
+.tia-close-btn {
+  margin-left: 8px;
+  color: var(--mui-palette-text-secondary, #888);
+  cursor: pointer;
+}
+
+.tia-arrow-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: var(--mui-palette-text-secondary, #888);
+  font-size: 22px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tia-arrow-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.tia-arrow-btn:hover {
+  background: transparent;
+  color: var(--mui-palette-text-primary, #333);
+}
