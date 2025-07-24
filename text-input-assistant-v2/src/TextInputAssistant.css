@@ -1,0 +1,63 @@
+.tia-popover {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 420px;
+  max-width: 480px;
+}
+
+.tia-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: move;
+  margin-bottom: 8px;
+}
+
+.tia-close-btn {
+  color: #888;
+}
+
+.tia-arrow-btn {
+  background: #e3e3e3;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+
+.tia-arrow-btn:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.tia-arrow-btn:not(:disabled):hover {
+  background: #d1d1d1;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.swiper-pagination-bullet {
+  background: #888;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #888;
+}
