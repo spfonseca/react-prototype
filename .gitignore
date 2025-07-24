@@ -48,3 +48,6 @@ yarn-error.log*
 
 # operating system files
 Thumbs.db
+
+
+*.code-workspace
