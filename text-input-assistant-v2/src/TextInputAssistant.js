@@ -26,16 +26,39 @@ import './TextInputAssistant.css';
 const toneOptions = ['Professional', 'Personable', 'Playful'];
 const formalityOptions = ['Formal', 'Neutral', 'Informal'];
 
-const exampleSlides = [
-  "Example Slide 1: Try swiping!\nThis slide demonstrates how multiple lines of text will automatically expand the slide height.\nYou can add as much content as needed.",
-  "Example Slide 2: Pagination bullets below.\nNotice how the slide grows to fit this extra line.\nSwiper height is now automatic!",
-  "Example Slide 3: Click a bullet to jump."
+// Parameterized slide creation with background color
+const defaultSlides = [
+  {
+    type: 'suggestion',
+    content: 'This is a suggestion slide.',
+    bgColor: '#e3f2fd', // default light blue
+  },
+  {
+    type: 'example',
+    content:
+      'Example Slide 1: Try swiping!\nThis slide demonstrates how multiple lines of text will automatically expand the slide height.\nYou can add as much content as needed.',
+    bgColor: '#e3f2fd',
+  },
+  {
+    type: 'example',
+    content:
+      'Example Slide 2: Pagination bullets below.\nNotice how the slide grows to fit this extra line.\nSwiper height is now automatic!',
+    bgColor: '#e3f2fd',
+  },
+  {
+    type: 'example',
+    content: 'Example Slide 3: Click a bullet to jump.',
+    bgColor: '#e3f2fd',
+  },
 ];
 
-const TextInputAssistant = ({ suggestions = [], onExport }) => {
+const TextInputAssistant = ({
+  slides = defaultSlides,
+  onExport,
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userText, setUserText] = useState('');
-  const [length, setLength] = useState(20);
+  const [length, setLength] = useState(25);
   const [tone, setTone] = useState(0);
   const [formality, setFormality] = useState(0);
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -46,12 +69,6 @@ const TextInputAssistant = ({ suggestions = [], onExport }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const inputRef = useRef(null);
-
-  // Combine suggestions and example slides for indexing
-  const allSlides = [
-    ...suggestions,
-    ...exampleSlides
-  ];
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -93,15 +110,15 @@ const TextInputAssistant = ({ suggestions = [], onExport }) => {
     setAnchorEl(null);
   };
 
-  // Copy handlers use allSlides and activeIndex
+  // Copy handlers use slides and activeIndex
   const handleCopyLeft = () => {
-    setUserText(allSlides[activeIndex] ?? '');
+    setUserText(slides[activeIndex]?.content ?? '');
   };
   const handleCopyMiddle = () => {
-    setUserText(allSlides[activeIndex + 1] ?? '');
+    setUserText(slides[activeIndex + 1]?.content ?? '');
   };
   const handleCopyRight = () => {
-    setUserText(allSlides[activeIndex + 2] ?? '');
+    setUserText(slides[activeIndex + 2]?.content ?? '');
   };
 
   const handleExport = () => {
@@ -205,75 +222,25 @@ const TextInputAssistant = ({ suggestions = [], onExport }) => {
                   autoHeight={true}
                   onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 >
-                  {suggestions.map((text, idx) => (
+                  {slides.map((slide, idx) => (
                     <SwiperSlide key={idx}>
                       <Box
                         sx={{
                           p: 2,
                           height: 'auto',
-                          bgcolor: '#fafafa',
+                          bgcolor: slide.bgColor || '#e3f2fd',
                           borderRadius: 2,
-                          border: '1px solid #eee',
+                          border: slide.type === 'example' ? '1px solid #90caf9' : '1px solid #eee',
                           width: '97%',
+                          userSelect: 'none',
                         }}
                       >
-                        <Typography variant="body1">{text}</Typography>
+                        <Typography variant="body1" sx={{ userSelect: 'none', whiteSpace: 'pre-line' }}>
+                          {slide.content}
+                        </Typography>
                       </Box>
                     </SwiperSlide>
                   ))}
-                  {/* Example slides */}
-                  <SwiperSlide>
-                    <Box
-                      sx={{
-                        p: 2,
-                        height: 'auto',
-                        bgcolor: '#e3f2fd',
-                        borderRadius: 2,
-                        border: '1px solid #90caf9',
-                        width: '97%',
-                      }}
-                    >
-                      <Typography variant="body1">
-                        Example Slide 1: Try swiping!<br />
-                        This slide demonstrates how multiple lines of text will automatically expand the slide height.<br />
-                        You can add as much content as needed.
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Box
-                      sx={{
-                        p: 2,
-                        height: 'auto',
-                        bgcolor: '#fce4ec',
-                        borderRadius: 2,
-                        border: '1px solid #f06292',
-                        width: '97%',
-                      }}
-                    >
-                      <Typography variant="body1">
-                        Example Slide 2: Pagination bullets below.<br />
-                        Notice how the slide grows to fit this extra line.<br />
-                        Swiper height is now automatic!
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Box
-                      sx={{
-                        p: 2,
-                        height: 'auto',
-                        bgcolor: '#e8f5e9',
-                        borderRadius: 2,
-                        border: '1px solid #66bb6a',
-                        width: '97%',
-                      }}
-                    >
-                      <Typography variant="body1">
-                        Example Slide 3: Click a bullet to jump.
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
                 </Swiper>
               </Box>
             </Box>
@@ -385,7 +352,7 @@ const TextInputAssistant = ({ suggestions = [], onExport }) => {
                   <Slider
                     value={length}
                     min={1}
-                    max={250}
+                    max={75}
                     step={1}
                     onChange={(e, v) => setLength(v)}
                     sx={{ width: 466 }}
