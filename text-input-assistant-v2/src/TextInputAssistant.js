@@ -16,6 +16,7 @@ import {
   faXmark,
   faArrowLeft,
   faArrowRight,
+  faUserAstronaut,
 } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -26,12 +27,11 @@ import './TextInputAssistant.css';
 const toneOptions = ['Professional', 'Personable', 'Playful'];
 const formalityOptions = ['Formal', 'Neutral', 'Informal'];
 
-// Parameterized slide creation with background color
 const defaultSlides = [
   {
     type: 'suggestion',
     content: 'This is a suggestion slide.',
-    bgColor: '#e3f2fd', // default light blue
+    bgColor: '#e3f2fd',
   },
   {
     type: 'example',
@@ -67,6 +67,7 @@ const TextInputAssistant = ({
   const [dragging, setDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [activeIndex, setActiveIndex] = useState(0);
+  const [aiPrompt, setAiPrompt] = useState('');
 
   const inputRef = useRef(null);
 
@@ -108,9 +109,10 @@ const TextInputAssistant = ({
 
   const handleClose = () => {
     setAnchorEl(null);
+    setUserText("");
+    setAiPrompt(""); // Clear AI Prompt when popover closes
   };
 
-  // Copy handlers use slides and activeIndex
   const handleCopyLeft = () => {
     setUserText(slides[activeIndex]?.content ?? '');
   };
@@ -122,13 +124,14 @@ const TextInputAssistant = ({
   };
 
   const handleExport = () => {
-    onExport({ userText, length, tone, formality });
+    onExport && onExport({ userText, length, tone, formality });
     if (anchorEl) {
       if (anchorEl.tagName === 'TEXTAREA' || (anchorEl.tagName === 'INPUT' && anchorEl.type === 'text')) {
         anchorEl.value = userText;
         anchorEl.dispatchEvent(new Event('input', { bubbles: true }));
       }
     }
+    setAnchorEl(null);
   };
 
   const handlePopoverMouseDown = (e) => {
@@ -152,6 +155,16 @@ const TextInputAssistant = ({
     };
   }, [dragging, dragOffset]);
 
+  const handleAgentClick = () => {
+    const agentData = {
+      length,
+      tone: toneOptions[tone],
+      formality: formalityOptions[formality],
+      aiPrompt,
+    };
+    window.alert(JSON.stringify(agentData, null, 2));
+  };
+
   const popoverWidth = 840;
 
   return (
@@ -167,7 +180,7 @@ const TextInputAssistant = ({
             width: popoverWidth,
             minWidth: popoverWidth,
             maxWidth: 1000,
-            maxHeight: '80vh',
+            maxHeight: '95vh',
             overflow: 'auto',
             display: 'flex',
             flexDirection: 'column',
@@ -270,7 +283,7 @@ const TextInputAssistant = ({
                 aria-label="Copy left suggestion to user editing area"
                 title="Copy left suggestion"
               >
-                <FontAwesomeIcon icon={faArrowLeft} />
+                <FontAwesomeIcon icon={faArrowDown} />
               </button>
             </Box>
             <Box
@@ -306,7 +319,7 @@ const TextInputAssistant = ({
                 aria-label="Copy right suggestion to user editing area"
                 title="Copy right suggestion"
               >
-                <FontAwesomeIcon icon={faArrowRight} />
+                <FontAwesomeIcon icon={faArrowDown} />
               </button>
             </Box>
           </Box>
@@ -331,74 +344,137 @@ const TextInputAssistant = ({
             />
           </Box>
 
-          {/* Advanced toggle and export button */}
-          <Box display="flex" alignItems="center" justifyContent="space-between" mt={1}>
-            <Box onClick={() => setShowAdvanced((prev) => !prev)} sx={{ cursor: 'pointer' }}>
-              <Typography variant="body2">Advanced</Typography>
-              <FontAwesomeIcon icon={showAdvanced ? faChevronUp : faChevronDown} />
-            </Box>
-            <IconButton onClick={handleExport}>
+          {/* Export button centered below User Editing Area */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
+            <IconButton
+              onClick={handleExport}
+              color="primary"
+              size="large"
+              aria-label="Copy to external text area"
+              title="Copy to external text area"
+            >
               <FontAwesomeIcon icon={faFileExport} />
             </IconButton>
           </Box>
 
-          {/* Advanced section with sliders */}
+          {/* Additional Configuration toggle above border; border only shows if open */}
+          <Box sx={{ position: 'relative', width: '100%', mt: 1, mb: -1, minHeight: 38 }}>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 10,
+                left: 16,
+                zIndex: 2,
+                px: 0.5,
+                bgcolor: '#fff',
+                fontSize: 13,
+                color: '#555',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                height: 24,
+              }}
+              onClick={() => setShowAdvanced((prev) => !prev)}
+            >
+              <Typography variant="body2" component="span">
+                Additional Configuration
+              </Typography>
+              <FontAwesomeIcon icon={showAdvanced ? faChevronUp : faChevronDown} style={{ marginLeft: 8 }} />
+            </Box>
+          </Box>
+
+          {/* Advanced section with sliders and border only when open */}
           <Collapse in={showAdvanced}>
-            <Box mt={1}>
-              {/* Length slider */}
-              <Box display="flex" alignItems="center" justifyContent="space-between" sx={{ my: 1.5 }}>
-                <Typography>Length</Typography>
-                <Box sx={{ width: 466, position: 'relative' }}>
-                  <Slider
-                    value={length}
-                    min={1}
-                    max={75}
-                    step={1}
-                    onChange={(e, v) => setLength(v)}
-                    sx={{ width: 466 }}
-                    valueLabelDisplay="auto"
-                    valueLabelFormat={(v) => `${v} words`}
+            <Box
+              mt={1}
+              sx={{
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                bgcolor: '#fff',
+                px: 2,
+                pb: 2,
+                pt: 2,
+                width: '100%',
+              }}
+            >
+              <Box display="flex" alignItems="flex-start" sx={{ my: 1.5 }}>
+                <Box sx={{ flex: 1 }}>
+                  {/* Length slider */}
+                  <Box display="flex" alignItems="center" sx={{ my: 1.5 }}>
+                    <Typography sx={{ minWidth: 80 }}>Length</Typography>
+                    <Slider
+                      value={length}
+                      min={1}
+                      max={75}
+                      step={1}
+                      onChange={(e, v) => setLength(v)}
+                      sx={{ width: 240, ml: 12.5 }}
+                      valueLabelDisplay="auto"
+                      valueLabelFormat={(v) => `${v} words`}
+                    />
+                  </Box>
+
+                  {/* Tone slider */}
+                  <Box display="flex" alignItems="center" sx={{ my: 1.5 }}>
+                    <Typography sx={{ minWidth: 80 }}>Tone</Typography>
+                    <Slider
+                      value={tone}
+                      min={0}
+                      max={toneOptions.length - 1}
+                      step={1}
+                      marks={toneOptions.length > 1 ? toneOptions.map((_, idx) => ({ value: idx })) : false}
+                      onChange={(e, v) => setTone(v)}
+                      sx={{ width: 240, ml: 12.5 }}
+                      valueLabelDisplay="auto"
+                      valueLabelFormat={(v) => toneOptions[v]}
+                    />
+                  </Box>
+
+                  {/* Formality slider */}
+                  <Box display="flex" alignItems="center" sx={{ my: 1.5 }}>
+                    <Typography sx={{ minWidth: 80 }}>Formality</Typography>
+                    <Slider
+                      value={formality}
+                      min={0}
+                      max={formalityOptions.length - 1}
+                      step={1}
+                      marks={formalityOptions.length > 1 ? formalityOptions.map((_, idx) => ({ value: idx })) : false}
+                      onChange={(e, v) => setFormality(v)}
+                      sx={{ width: 240, ml: 12.5 }}
+                      valueLabelDisplay="auto"
+                      valueLabelFormat={(v) => formalityOptions[v]}
+                    />
+                  </Box>
+                </Box>
+                {/* Text area to the right of sliders */}
+                <Box sx={{ minWidth: 220, ml: 4, width:300 }}>
+                  <TextField
+                    label="AI Prompt"
+                    multiline
+                    rows={5}
+                    fullWidth
+                    variant="outlined"
+                    InputLabelProps={{ shrink: true }}
+                    value={aiPrompt}
+                    onChange={e => setAiPrompt(e.target.value)}
                   />
                 </Box>
               </Box>
-
-              {/* Tone slider */}
-              <Box display="flex" alignItems="center" justifyContent="space-between" sx={{ my: 1.5 }}>
-                <Typography>Tone</Typography>
-                <Box sx={{ width: 466, position: 'relative' }}>
-                  <Slider
-                    value={tone}
-                    min={0}
-                    max={toneOptions.length - 1}
-                    step={1}
-                    marks={toneOptions.map((label, idx) => ({ value: idx, label }))}
-                    onChange={(e, v) => setTone(v)}
-                    sx={{ width: 466 }}
-                    valueLabelDisplay="auto"
-                    valueLabelFormat={(v) => toneOptions[v]}
-                  />
-                </Box>
-              </Box>
-
-              {/* Formality slider */}
-              <Box display="flex" alignItems="center" justifyContent="space-between" sx={{ my: 1.5 }}>
-                <Typography>Formality</Typography>
-                <Box sx={{ width: 466, position: 'relative' }}>
-                  <Slider
-                    value={formality}
-                    min={0}
-                    max={formalityOptions.length - 1}
-                    step={1}
-                    marks={formalityOptions.map((label, idx) => ({ value: idx, label }))}
-                    onChange={(e, v) => setFormality(v)}
-                    sx={{ width: 466 }}
-                    valueLabelDisplay="auto"
-                    valueLabelFormat={(v) => formalityOptions[v]}
-                  />
-                </Box>
+              {/* Agent button centered at the bottom of additional configuration */}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                <IconButton
+                  color="secondary"
+                  size="large"
+                  aria-label="Agent"
+                  title="Have Dragonfly generate new responses"
+                  onClick={handleAgentClick}
+                >
+                  <FontAwesomeIcon icon={faUserAstronaut} />
+                </IconButton>
               </Box>
             </Box>
           </Collapse>
+
         </Box>
       )}
     </>
