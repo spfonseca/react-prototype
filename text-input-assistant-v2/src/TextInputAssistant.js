@@ -447,7 +447,7 @@ const TextInputAssistant = ({
                   </Box>
                 </Box>
                 {/* Text area to the right of sliders */}
-                <Box sx={{ minWidth: 220, ml: 4, width:300 }}>
+                <Box sx={{ minWidth: 220, ml: 4, width: 300 }}>
                   <TextField
                     label="AI Prompt"
                     multiline
@@ -469,7 +469,11 @@ const TextInputAssistant = ({
                   title="Have Dragonfly generate new responses"
                   onClick={handleAgentClick}
                 >
-                  <FontAwesomeIcon icon={faUserAstronaut} />
+                  <img
+                    src="/img/dragonfly-architect-logo-trimmed.png" // <-- Replace with your image path
+                    alt="Agent"
+                    style={{ width: 50, height: 50, borderRadius: '50%' }}
+                  />
                 </IconButton>
               </Box>
             </Box>
