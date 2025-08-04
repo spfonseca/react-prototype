@@ -1,0 +1,180 @@
+.risk-matrix-root {
+  margin: 2rem auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+.risk-matrix-title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.risk-matrix-description {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+.risk-matrix-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.likelihood-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.matrix-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.impact-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.risk-matrix-table-wrapper {
+  overflow-x: auto;
+}
+.risk-matrix-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fafafa;
+}
+.risk-matrix-table th,
+.risk-matrix-table td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  min-width: 80px;
+  font-size: 1.1rem;
+}
+.corner-cell {
+  background: #fff;
+}
+.likelihood-header {
+  background: #fff;
+  font-weight: 500;
+}
+.impact-header {
+  background: #fff;
+  font-weight: 500;
+}
+.risk-cell {
+  background: #fff;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+/* Very Likely Row */
+.risk-cell-very_likely-negligible {
+  background: #4caf50;
+  color: #fff;
+}
+.risk-cell-very_likely-minor {
+  background: #ffeb3b;
+}
+.risk-cell-very_likely-moderate {
+  background: #ff9800;
+  color: #fff;
+}
+.risk-cell-very_likely-significant {
+  background: #f44336;
+  color: #fff;
+}
+.risk-cell-very_likely-severe {
+  background: #f44336;
+  color: #fff;
+}
+/* Likely Row */
+.risk-cell-likely-negligible {
+  background: #2e7d32;
+  color: #fff;
+}
+.risk-cell-likely-minor {
+  background: #4caf50;
+  color: #fff;
+}
+.risk-cell-likely-moderate {
+  background: #ffeb3b;
+}
+.risk-cell-likely-significant {
+  background: #ff9800;
+  color: #fff;
+}
+.risk-cell-likely-severe {
+  background: #f44336;
+  color: #fff;
+}
+/* Possible Row */
+.risk-cell-possible-negligible {
+  background: #2e7d32;
+  color: #fff;
+}
+.risk-cell-possible-minor {
+  background: #4caf50;
+  color: #fff;
+}
+.risk-cell-possible-moderate {
+  background: #ffeb3b;
+}
+.risk-cell-possible-significant {
+  background: #ff9800;
+  color: #fff;
+}
+.risk-cell-possible-severe {
+  background: #ff9800;
+  color: #fff;
+}
+/* Unlikely Row */
+.risk-cell-unlikely-negligible {
+  background: #2e7d32;
+  color: #fff;
+}
+.risk-cell-unlikely-minor {
+  background: #4caf50;
+  color: #fff;
+}
+.risk-cell-unlikely-moderate {
+  background: #4caf50;
+  color: #fff;
+}
+.risk-cell-unlikely-significant {
+  background: #ffeb3b;
+}
+.risk-cell-unlikely-severe {
+  background: #ff9800;
+  color: #fff;
+}
+/* Very Unlikely Row */
+.risk-cell-very_unlikely-negligible {
+  background: #2e7d32;
+  color: #fff;
+}
+.risk-cell-very_unlikely-minor {
+  background: #2e7d32;
+  color: #fff;
+}
+.risk-cell-very_unlikely-moderate {
+  background: #4caf50;
+  color: #fff;
+}
+.risk-cell-very_unlikely-significant {
+  background: #ffeb3b;
+}
+.risk-cell-very_unlikely-severe {
+  background: #ffeb3b;
+}
