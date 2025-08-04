@@ -5,7 +5,6 @@ import {
   AccordionSummary,
   AccordionDetails,
   FormControl,
-  InputLabel,
   Select,
   MenuItem,
   Checkbox,
@@ -198,68 +197,83 @@ const RiskMatrix = ({ data }) => {
         <AccordionDetails>
           <div style={{ marginBottom: '2rem' }}>
             <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem' }}>
-              <FormControl style={{ minWidth: 200 }}>
-                <InputLabel>Impact</InputLabel>
-                <Select
-                  multiple
-                  value={impactFilter}
-                  onChange={handleImpactChange}
-                  renderValue={(selected) => {
-                    if (selected.includes('All')) return 'All';
-                    return selected.map(item => impactDisplay[impactLabels.indexOf(item)]).join(', ');
-                  }}
-                >
-                  <MenuItem value="All">
-                    <Checkbox checked={impactFilter.includes('All')} />
-                    <ListItemText primary="All" />
-                  </MenuItem>
-                  {impactLabels.map((impact, index) => (
-                    <MenuItem key={impact} value={impact}>
-                      <Checkbox checked={impactFilter.includes(impact)} />
-                      <ListItemText primary={impactDisplay[index]} />
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <Typography variant="subtitle2" color="textSecondary" style={{ marginBottom: '0.5rem' }}>
+                  Impact
+                </Typography>
+                <FormControl style={{ minWidth: 200 }}>
+                  <Select
+                    multiple
+                    value={impactFilter}
+                    onChange={handleImpactChange}
+                    renderValue={(selected) => {
+                      if (selected.includes('All')) return 'All';
+                      return selected.map(item => impactDisplay[impactLabels.indexOf(item)]).join(', ');
+                    }}
+                    displayEmpty
+                  >
+                    <MenuItem value="All">
+                      <Checkbox checked={impactFilter.includes('All')} />
+                      <ListItemText primary="All" />
                     </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                    {impactLabels.map((impact, index) => (
+                      <MenuItem key={impact} value={impact}>
+                        <Checkbox checked={impactFilter.includes(impact)} />
+                        <ListItemText primary={impactDisplay[index]} />
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </div>
 
-              <FormControl style={{ minWidth: 200 }}>
-                <InputLabel>Likelihood</InputLabel>
-                <Select
-                  multiple
-                  value={likelihoodFilter}
-                  onChange={handleLikelihoodChange}
-                  renderValue={(selected) => {
-                    if (selected.includes('All')) return 'All';
-                    return selected.map(item => likelihoodDisplay[likelihoodLabels.indexOf(item)]).join(', ');
-                  }}
-                >
-                  <MenuItem value="All">
-                    <Checkbox checked={likelihoodFilter.includes('All')} />
-                    <ListItemText primary="All" />
-                  </MenuItem>
-                  {likelihoodLabels.map((likelihood, index) => (
-                    <MenuItem key={likelihood} value={likelihood}>
-                      <Checkbox checked={likelihoodFilter.includes(likelihood)} />
-                      <ListItemText primary={likelihoodDisplay[index]} />
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <Typography variant="subtitle2" color="textSecondary" style={{ marginBottom: '0.5rem' }}>
+                  Likelihood
+                </Typography>
+                <FormControl style={{ minWidth: 200 }}>
+                  <Select
+                    multiple
+                    value={likelihoodFilter}
+                    onChange={handleLikelihoodChange}
+                    renderValue={(selected) => {
+                      if (selected.includes('All')) return 'All';
+                      return selected.map(item => likelihoodDisplay[likelihoodLabels.indexOf(item)]).join(', ');
+                    }}
+                    displayEmpty
+                  >
+                    <MenuItem value="All">
+                      <Checkbox checked={likelihoodFilter.includes('All')} />
+                      <ListItemText primary="All" />
                     </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                    {likelihoodLabels.map((likelihood, index) => (
+                      <MenuItem key={likelihood} value={likelihood}>
+                        <Checkbox checked={likelihoodFilter.includes(likelihood)} />
+                        <ListItemText primary={likelihoodDisplay[index]} />
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </div>
 
-              <FormControl style={{ minWidth: 300 }}>
-                <InputLabel>Select Risk</InputLabel>
-                <Select
-                  value={selectedRisk}
-                  onChange={handleRiskChange}
-                  disabled={filteredRisks.length === 0}
-                >
-                  {filteredRisks.map((risk) => (
-                    <MenuItem key={risk.number} value={`${risk.number} - ${risk.name}`}>
-                      {risk.number} - {risk.name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+                             <div style={{ display: 'flex', flexDirection: 'column' }}>
+                 <Typography variant="subtitle2" color="textSecondary" style={{ marginBottom: '0.5rem' }}>
+                   Risk
+                 </Typography>
+                <FormControl style={{ minWidth: 300 }}>
+                  <Select
+                    value={selectedRisk}
+                    onChange={handleRiskChange}
+                    disabled={filteredRisks.length === 0}
+                    displayEmpty
+                  >
+                    {filteredRisks.map((risk) => (
+                      <MenuItem key={risk.number} value={`${risk.number} - ${risk.name}`}>
+                        {risk.number} - {risk.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </div>
             </div>
 
             {selectedRiskData && (
